@@ -22,8 +22,7 @@ else (BUILD_SHARED_LIBS)
 endif (BUILD_SHARED_LIBS)
 option(protobuf_BUILD_SHARED_LIBS "Build Shared Libraries" ${protobuf_BUILD_SHARED_LIBS_DEFAULT})
 include(CMakeDependentOption)
-cmake_dependent_option(protobuf_MSVC_STATIC_RUNTIME "Link static runtime libraries" ON
-  "NOT protobuf_BUILD_SHARED_LIBS" OFF)
+option(protobuf_MSVC_STATIC_RUNTIME "Link static runtime libraries" OFF)
 set(protobuf_WITH_ZLIB_DEFAULT ON)
 option(protobuf_WITH_ZLIB "Build with zlib support" ${protobuf_WITH_ZLIB_DEFAULT})
 set(protobuf_DEBUG_POSTFIX "d"
